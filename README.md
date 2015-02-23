@@ -1,8 +1,10 @@
 targetDepth Version 1.0.0
 Copyright Alex Mawla 2015. All Rights Reserved.
 
+Takes in an indexed coverage file with a partition csv file identifying regions of interest, and outputs depth of coverage files for each partition of interest. 
 
-Requirements: Samtools. Binary must be located in /usr/bin or specified in shell environment path.
+Requirements: Samtools (http://samtools.sourceforge.net).
+    Satmools binary must be located in /usr/bin or specified in the terminal shell environment path.
 
 Input:
   1) Indexed Coverage file (BAM format) [required]
