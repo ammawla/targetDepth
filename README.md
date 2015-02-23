@@ -1,4 +1,5 @@
 targetDepth Version 1.0.0
+
 Copyright Alex Mawla 2015. All Rights Reserved.
 
 Takes in an indexed coverage file with a partition csv file identifying regions of interest, and outputs depth of coverage files for each partition of interest. 
