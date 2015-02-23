@@ -4,7 +4,7 @@ Copyright Alex Mawla 2015. All Rights Reserved.
 Takes in an indexed coverage file with a partition csv file identifying regions of interest, and outputs depth of coverage files for each partition of interest. 
 
 Requirements: Samtools (http://samtools.sourceforge.net).
-    Satmools binary must be located in /usr/bin or specified in the terminal shell environment path.
+    Samtools binary must be located in /usr/bin or specified in the terminal shell environment path.
 
 Input:
 
@@ -12,7 +12,7 @@ Input:
   
   2) Partition file (CSV format) [required] 	
         Four columns:  
-                    Partition Name, Chromosome, Start Position, Stop Position
+            Partition Name, Chromosome, Start Position, Stop Position
   
   3) Reference genome (bed format) [required]     
   
