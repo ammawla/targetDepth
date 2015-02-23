@@ -9,10 +9,13 @@ Requirements: Samtools (http://samtools.sourceforge.net).
 Input:
 
   1) Indexed Coverage file (BAM format) [required]
+  
   2) Partition file (CSV format) [required] 	
         Four columns:  
           Partition Name, Chromosome, Start Position, Stop Position
+  
   3) Reference genome (bed format) [required]     
+  
   4) Output directory [optional]		   
 
 
