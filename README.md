@@ -12,8 +12,7 @@ Input:
   
   2) Partition file (CSV format) [required] 	
         Four columns:  
-                
-                Partition Name, Chromosome, Start Position, Stop Position
+                    Partition Name, Chromosome, Start Position, Stop Position
   
   3) Reference genome (bed format) [required]     
   
