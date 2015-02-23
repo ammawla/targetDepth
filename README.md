@@ -7,6 +7,7 @@ Requirements: Samtools (http://samtools.sourceforge.net).
     Satmools binary must be located in /usr/bin or specified in the terminal shell environment path.
 
 Input:
+
   1) Indexed Coverage file (BAM format) [required]
   2) Partition file (CSV format) [required] 	
         Four columns:  
