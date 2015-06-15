@@ -3,12 +3,13 @@
 #Copyright Alex Mawla 2015. All Rights Reserved.
 
 ####################################################
-#targetDepth	1.0.0				   #	
+#targetDepth	1.0.1				   #	
 #Copyright Alex Mawla 2015. All Rights Reserved.   #
 #Requirements: Samtools. Binary must be located in #
 #/usr/bin or specified in shell environment path.  #
 ########################Input####################### 					   	
 #      Indexed Coverage file (BAM format)[required]#
+#      Sample name [required]			   #
 #      Partition file (CSV format): Four columns:  #
 #      Partition Name, Chromosome, Start Position, #
 #      Stop Position.[required] 		   #
@@ -38,9 +39,10 @@ __maintainer__ = "Alex Mawla"
 __email__ = "ammawla@ucdavis.edu"
 
 def main():
-	usage = "usage: %prog [options] -b <in.bam> [required] -p <partitions.csv> [required] -r <genome.bed> [required] -o <output_dir>\n\nRequires Samtools to be in environment shell path."
+	usage = "usage: %prog [options] -b <in.bam> [required] -n <sample_name> [required] -p <partitions.csv> [required] -r <genome.bed> [required] -o <output_dir>\n\nRequires Samtools to be in environment shell path."
 	parser = OptionParser(usage, version='\n' + "%prog " + __version__ + '\n' + __copyright__ + '\n')
 	parser.add_option("-b", "--input-bam", action="store", type="string", dest="input_bam", help="Alignment file in BAM format [Required]")
+	parser.add_option("-n", "--sample-name", action="store", type="string", dest="sample_name", help="Sample name [Required]")
 	parser.add_option("-o", "--output-dir", action="store", type="string", dest="output_dir", help="Output directory.") 
 	parser.add_option("-p", "--partion-file", action="store", type="string", dest="partition_file", help="Partition file in csv format with four columns: Partition Name, Chromosome, Start Position, Stop Position. [Required]")
 	parser.add_option("-r", "--reference-bed", action="store", type="string", dest="ref_bed", help="Reference genome in bed format. [Required]")
@@ -95,15 +97,12 @@ def main():
 		start = row[2]
 		stop = row[3]  
 		region = chrom + ":" + start + "-" + stop
-		dest = options.output_dir + "/" +  partition + ".depth"
+		dest = options.output_dir + "/" +  options.sample_name + "_" + partition + ".depth"
 		cmd = "samtools depth -r " + region + " " +  options.input_bam + " > " + dest
 		os.system(cmd)
   
 if __name__ == '__main__':
   main()
-
-
-
 
 
 
